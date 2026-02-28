@@ -1,3 +1,182 @@
-* {
-    
+:root {
+    --bg-body : #1B1C2C;
+    --bg-menu : #20353F;
+    --bg-button : #2B6F8D;
+    --bg-card : #181928;
+    --bg-detail : #121320;
+    --color-text: #f1f1f1;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-text);
+    text-decoration: none;
+    list-style: none;
+
+}
+
+body, html {
+    min-height: 100%;
+    position: relative;
+}
+
+.bg-style {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.effect-shadow {
+    box-shadow: 0px 4px 5px var(--bg-button);
+}
+
+/*==================================================*/
+
+#particles-container {
+    width: 100%;
+    height: 100%; /* Pode trocar por 100% se estiver dentro de outra div */
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+    background-color: var(--bg-body);
+}
+
+#particles-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+
+.menu {
+    position: fixed;
+    left: 50px;
+    top: 50%;
+    width: 60px;
+    height: 220px;
+    transform: translateY(-50%);
+    background: var(--bg-menu);
+    padding: 10px 0 10px 0;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+}
+
+.menu ul {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.menu li a {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.menu li a:hover {
+    background-color: var(--bg-button);
+    box-shadow: 1px 4px 10px var(--bg-button);
+
+}
+
+.social {
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    z-index: 99;
+}
+
+.social ul {
+    display: flex;
+    gap: 10px;
+}
+
+.social li a i {
+    font-size: 22px;
+    transition: all 0.2s;
+}
+.social li a i:hover {
+    transform: scale(1.1);
+}
+
+/*==================================================*/
+
+.my {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.my--picture-box {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #121320;
+    margin-bottom: 40px;
+}
+
+.my--picture-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.my--text {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.my--text h1 {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.my--text h1 span, .my--text h2 span {color: var(--bg-button);}
+
+.my--button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.my--button a {
+    width: 150px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    border: 2px solid var(--color-text);
+}
+
+.my--button a.ver-mais {
+    border: none;
+    background-color: var(--bg-button);
+}
+
+.my--declariation {
+    text-align: center;
+    font-size: 18px;
+    max-width: 800px;
 }
