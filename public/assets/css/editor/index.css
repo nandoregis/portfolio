@@ -1,0 +1,121 @@
+@import url(index.css);
+
+#up-img {
+    display: none;
+}
+
+#tools {
+    display: flex;
+    height: 100%;
+}
+
+#molde, #render {
+    width: 60%;
+    height: 100%;
+    background-color: var(--bg-gray);
+}
+
+#render {
+    cursor: grab;
+    width: 40%;
+    background-color: var(--bg-dark);
+}
+#render.grabbing {cursor: grabbing !important;}
+
+.molde__header {
+    display: flex;
+    max-height: 30px;
+    border-bottom: 1px dotted var(--bg-dark);
+}
+
+.molde__btn-action {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+}
+
+.molde__container {
+    background: #333;
+    background-size: 40px 40px;
+    background-image: 
+    linear-gradient(to right, #4b4a4a, 1px, transparent 1px),
+    linear-gradient(to bottom, #4b4a4a, 1px, transparent 1px);
+    height: calc(100% - 30px);
+    overflow: hidden;
+}
+
+#btn-voltar {
+    background-color: var(--bg-dark);
+}
+
+.tools__loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-gray);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tools__loading.hide {display: none;}
+.tools__loading-wraper {text-align: center;}
+.tools__loading img {width: 50px;}
+
+.modal-tools__cores {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--bg-menu);
+    display: none;
+}
+.modal-tools__cores.show {
+    display: block;
+}
+
+.modal-tools__cores span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.modal-tools__cores__btn-close {
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    justify-content: center;
+    transition: all 0.5s;
+    opacity: 0.7;
+}
+
+.modal-tools__cores__btn-close:hover {
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.5s;
+    transform: scale(1.2);
+}
+.modal-tools__cores__group {
+    padding: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    #tools {
+        flex-wrap: wrap;
+    }
+
+    #molde, #render {
+        width: 100%;
+        height: 50%;
+      
+    }
+}

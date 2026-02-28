@@ -1,0 +1,123 @@
+@import url(../../../index.css);
+
+.contents {
+    width: 100%;
+}
+
+.login__logado {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.login__logado a {
+    width: 100%;
+    margin-top: 8px;
+    text-align: center;
+    display: inline-block;
+    color: var(--text-lite);
+}
+
+.login__logado .icon {margin-bottom: 8px;}
+
+.login__form {
+    width: 100%;
+    height: 100%;
+}
+
+.login__form__wraper {
+    width: 30%;
+    padding: 40px 30px;
+    border-radius: 3px;
+    background-color: var(--bg-menu);
+    position: relative;
+}
+
+.login__header {
+    text-align: center;
+}
+
+.login__header h2 {
+    font-weight: normal;
+    color: #f9f9f9;
+    margin: 10px 0 10px;
+}
+
+.login__header p {
+    margin-bottom: 10px;
+}
+
+.input-box {
+    background-color: #f9f9f9; 
+    position: relative;
+}
+
+.input-box .icon {
+    width: 40px;
+    height: 100%;
+}
+
+.input-box input {
+    width: calc(100% - 40px);
+}
+
+.input-btn-container {
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.input-box-btn {
+    width: 49%;
+    height: 40px;
+}
+
+.input-box-btn input,
+.input-box-btn a  {
+    background-color: #f9f9f9;
+}
+
+.input-box-btn a {
+    background: none;
+    color: #f9f9f9;
+    border: 1px solid #f9f9f9;
+}
+
+.login__esqueceu-senha {text-align: right;}
+.login__esqueceu-senha a {color: var(--text-lite);}
+
+.login__message {
+    position: absolute;
+    top: 102%;
+    left: 0;
+    width: 100%;
+}
+
+.login__message div {
+    max-width: none;
+}
+
+/* justify-content*/
+.login__logado .icon,
+.login__form,
+.input-box-btn a, 
+.input-box .icon {
+    justify-content: center;
+}
+
+#btn-show-password {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    cursor: pointer;
+}
+
+#btn-show-password i {
+    font-size: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .login__form__wraper {
+        width: 90%;
+    }
+}

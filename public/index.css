@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --bg-dark: #27272C;
+    --bg-gray: #DEE4EC;
+    --bg-gold: #FFD700;
+    --bg-menu: #343439;
+    --bg-input: #343439;
+    --text-lite: rgb(190, 190, 190);
+    /*-----------------------------*/
+    --menu-width: 200px;
+    --menu-nav-select: #3F3F44;
+}
+
+html, body {
+    height: 100%;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+}
+
+.flex { display: flex;}
+
+.titulo-pagina { 
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.container {
+    width: 100%;
+    height: calc(100% - 50px);
+    display: flex;
+    overflow-y: hidden;
+}
+
+.container.h100 {
+    height: 100%;
+}
+
+.contents {
+    height: 100%;
+    width: calc( 100% - var(--menu-width) );
+    background-color: var(--bg-dark);
+    color: var(--text-lite);
+    padding: 10px 20px;
+    overflow-x: auto;
+}
+
+.box-padrao {
+    background-color: var(--bg-menu);
+    padding: 30px 20px;
+    border-radius: 3px;
+}
+
+/* ----- modifica o scroll para ficar mais de acordo com o site*/
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: var(--bg-dark);
+    opacity: 0.5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--bg-menu);
+}
+
+
+/*box  de mensagem*/
+
+.container-message {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: #ccc;
+    border-radius: 3px;
+}
+
+.container-message.error {background-color: rgba(231, 162, 162, 0.5);}
+.container-message.success {background-color: rgba(151, 212, 151, 0.5);}
+
+.box-message {
+    padding: 15px;
+}
+
+.box-message p {
+    text-align: center;
+    font-size: 12px;
+    padding-right: 5px;
+}
+
+.message__btn-close {
+    position: absolute;
+    top: 1.5px;
+    right: 1.5px;
+    cursor: pointer;
+}
+
+/*---------------------------------------------*/
+
+.input-box {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+.input-box input,
+.input-box select,
+.input-box textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+.input-box-btn button,
+.input-box-btn input,
+.input-box-btn a  {
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.wd-120px { width: 120px;}
+.wd-150px { width: 150px;}
+.wd-180px { width: 180px;}
+.wd-200px { width: 200px;}
+
+
+/* COMPONENTE BANNER */
+
+.banner__wraper {
+    margin-top: 20px;
+    overflow-x: hidden;
+    padding: 0;
+    border: 1px solid white;  
+    border-radius: 5px;
+}
+
+#banner-slide { cursor:grab;}
+
+.banner__slide-box {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+}
+
+.banner__info h2, .banner__info p {
+    font-size: 30px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.banner__info p { 
+    font-size: 14px;
+    width: calc(100% - 120px);
+}
+
+/*-----------------*/
+
+.banner__wraper:hover  .banner__chamada {
+    transition: 0.5s all;
+    opacity: 1;
+ 
+}
+
+.banner__chamada  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    background: rgba(36, 36, 36, 0.5);
+    
+}
+
+.banner__chamada--wraper {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.banner__chamada-btn {
+    display: inline-flex;
+    height: 35px;
+    background-color: var(--bg-gray);
+    transition: all 0.5s;
+    cursor: pointer;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.banner__chamada-btn:hover {
+    background-color: var(--bg-dark);
+    transition: all 0.7s;
+}
+
+.banner__chamada-btn:hover .text p {
+    color: var(--bg-gray);
+}
+
+.banner__chamada-btn:hover > .icon {
+    background-color: aqua;
+    transition: all 0.7s;
+}
+
+.banner__chamada-btn .icon {
+    transition: all 0.7s;
+    background-color: var(--bg-gold);
+    width: 35px;
+    height: 35px;
+    justify-content: center;
+}
+
+.banner__chamada-btn .text {
+    padding: 0 10px;
+    width: calc(100% - 40px);
+}
+.banner__chamada-btn .text p {
+    color: var(--bg-dark);
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.7s;
+}
+
+.footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.footer a {
+    text-decoration: none;
+    color: rgb(115, 164, 230);
+    font-size: 14px;
+}
+
+.footer--whats-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+}
+
+.footer--whats-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    justify-content: center;
+    background-color: var(--text-lite);
+    border: 2px solid var(--text-lite);
+    cursor: pointer;
+}
+
+.footer--whats-btn img {
+    max-width: 30px;
+}
+
+.btn-menu-mobile {
+    display: none;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+
+   
+    
+    .header-principal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+    }
+
+    .btn-menu-mobile {
+        display: block;
+        cursor: pointer;
+    }
+
+    .contents {
+        padding-top: 50px;
+        width: 100%;
+    }
+
+    .header-principal__wraper {
+        justify-content: space-between;
+    }   
+
+}
