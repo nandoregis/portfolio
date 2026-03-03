@@ -9,8 +9,41 @@
     </nav>
 
     <script>
-        const a = document.querySelectorAll('.menu nav a');
-        console.log(a);
+        const buttons = document.querySelectorAll('.menu nav a');
+        const scrollGump = 15;
+        var scrollTop = window.scrollY;
+        var contadorScroll = 0;
+        
+
+        buttons.forEach( i => {
+            i.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                const id = i.getAttribute('href');
+                const offset = document.querySelector(id).offsetTop;
+                scrollTop = offset;
+                
+                const interval = setInterval(() => {
+
+                    if(scrollTop == 0) {
+
+                        contadorScroll = window.scrollY - scrollGump;
+
+                    } else contadorScroll = contadorScroll + scrollGump; 
+                   
+                    window.scrollTo(0, contadorScroll);
+
+                    if( ( scrollTop > 0 && contadorScroll >= scrollTop ) || contadorScroll < 0 ) 
+                    {
+                        contadorScroll = scrollTop;
+                        clearInterval(interval);
+                    }
+                    
+                    
+                }, 10);
+               
+            });
+        });
 
 
     </script>
