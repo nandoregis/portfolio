@@ -1,0 +1,49 @@
+@import url(index.css);
+
+.skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-skills {
+    width: 50%;
+    height: 100%;
+    display: flex;
+}
+
+/*================ model 3D ===============*/
+
+.my-skills--model {
+    height: 100%;
+    width: 50%;
+    position: relative
+}
+
+.skills--overlay {
+    background: var(--bg-card);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+/*============ Skills cards ===============*/
+.my-skills--cards-item {
+    width: 300px;
+    height: 50px;
+    background-color: var(--bg-card);
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.my-skills--cards-item p {
+    font-size: 12px;
+    font-style: italic;
+    color: #ccc;
+}
+.my-skills--cards-item i {
+    font-size: 30px;
+    color: rgb(227, 76, 38)
+}

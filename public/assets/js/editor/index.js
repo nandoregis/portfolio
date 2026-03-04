@@ -8,10 +8,10 @@ const loading = document.querySelector('.tools__loading');
 ( async () => {
   
     const view = new Viewer(renderModel);
-    const urlApi = 'https://visualapi.nellure.com';
+    const urlApi = 'https://visualapi.nellure.com'; //
 
-    const uuidModel = document.getElementById('uuidModelo').value;
-    const uuidReferencia = document.getElementById('uuidRef').value;
+    const uuidModel = document.getElementById('uuidModelo').value; //
+    const uuidReferencia = document.getElementById('uuidRef').value; //
 
     const textures = await fetch(`${urlApi}/v1/references/textures/${uuidReferencia}`);
     const texturesJson = await textures.json();
