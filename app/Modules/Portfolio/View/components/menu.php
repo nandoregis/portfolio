@@ -10,7 +10,7 @@
 
     <script>
         const buttons = document.querySelectorAll('.menu nav a');
-        const scrollGump = 15;
+        const scrollGump = 25;
         var scrollTop = window.scrollY;
         var contadorScroll = 0;
         
