@@ -53,6 +53,9 @@ class PortfolioController extends Controller
 
         ]);
 
+        $projetos = parent::components(parent::dir_base() . '/projetos.php');
+
+
         $menu = parent::components(parent::dir_base() . '/components/menu.php');
         $social = parent::components(parent::dir_base() . '/components/social.php');
 
@@ -61,7 +64,9 @@ class PortfolioController extends Controller
             'menu' => $menu,
             'social' => $social,
             'home' => $home,
-            'skills' => $skills
+            'skills' => $skills,
+            'projetos' => $projetos,
+            
         ])
 
         ->display();
