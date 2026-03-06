@@ -11,6 +11,7 @@
                 <div class="my-skills--cards__wraper">
 
                     <h2>Skills</h2>
+                    
                     <div class="my-skills--cards-group">
     
                         <div class="my-skills--cards-item">
