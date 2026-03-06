@@ -1,9 +1,9 @@
  <div class="my-skills--cards-item">
     <span>
-        <i class="fa-brands fa-html5"></i>
+        <i class="{@icon}" style="color: {@color}"></i>
     </span>
     <div class="my-skills--cards-item__info">
-        <h5>HTML</h5>
-        <p>6 anos entre estudo e prática na programação.</p>
+        <h5>{@tecnologia}</h5>
+        <p>{@descricao}</p>
     </div>
 </div>
