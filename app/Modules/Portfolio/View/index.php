@@ -26,9 +26,15 @@
      <div id="particles-container">
         <canvas id="particles-canvas"></canvas>
     </div>
-
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "http://app-portfolio.localhost/build/three.module.js"
+            }
+        }
+    </script>
     <script src="assets/js/portfolio/particles.js"></script>
-
+    <script type="module" src="http://app-portfolio.localhost/assets/js/editor/index.js"></script>
    
 
 </body>

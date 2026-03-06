@@ -3,8 +3,8 @@
     <div class="my-skills">
 
             <div class="my-skills--model">
+                <div id="render" class="renderer"></div>
                 <div class="skills--overlay"></div>
-                <div id="render"></div>
             </div>
 
             <div class="my-skills--cards">
