@@ -106,7 +106,7 @@ export default class Viewer2
         this.#mixer = new THREE.AnimationMixer(model);
 
         clips.forEach( clip => {
-            this.#actions = this.#mixer.clipAction(clip);
+            this.#actions = this.#mixer.clipAction(clip);  
         });
 
     }

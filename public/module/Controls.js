@@ -11,7 +11,7 @@ export default class Controls
         this.#controls.dampingFactor = 0.05;
 
         this.#controls.enabled = true;
-        this.#controls.autoRotateSpeed = 5;
+        this.#controls.autoRotateSpeed = 2;
 
         this.target = this.#controls.target;
 
