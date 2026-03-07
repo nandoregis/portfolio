@@ -6,27 +6,31 @@
 
 .my-projetos {
     width: 70%;
+    height: 100%;
     margin: 0 auto;
     text-align: center;
 }
 
 .my-projetos--gp {
     margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;;
 }
 
 .my-projetos--item {
     width: 250px;
     max-width: 250px;
     min-height: 300px;
+    height: auto;
     border-radius: 5px;
-    overflow: hidden;
     text-align: left;
     background-color: var(--bg-card);
     cursor: pointer;
 }
 
 .my-projetos--item .item--img {
-    height: 50%;
+    height: 40%;
 }
 
 .my-projetos--item .item--img img {

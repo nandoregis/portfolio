@@ -113,6 +113,20 @@ class PortfolioController extends Controller
                 ],
                 'demo' => '#',
                 'github' => '#'
+            ],
+            [
+                'img' => 'https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg?fit=740%2C416&ssl=1',
+                'titulo' => 'Lorem Ipsum',
+                'descricao' => 'Sistema de modelo 3D, para camisas em que adiciona estampas em t-shirt.',
+                'tecnologias' => [
+                    'HTML',
+                    'CSS',
+                    'Javascript',
+                    'PHP',
+                    'Mysql'
+                ],
+                'demo' => '#',
+                'github' => '#'
             ]
         ];
         

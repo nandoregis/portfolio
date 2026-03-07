@@ -6,7 +6,7 @@
         <div class="my-projetos--gp">
 
            {@cards}
-           
+
         </div>
     </div>
-</div>
+</div>7uj
