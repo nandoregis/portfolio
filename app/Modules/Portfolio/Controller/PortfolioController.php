@@ -18,7 +18,33 @@ class PortfolioController extends Controller
     {   
         $html = parent::html_render()->load('index.php');
 
-        $arrCardSkills = [
+        $menu = parent::components(parent::dir_base() . '/components/menu.php');
+        $social = parent::components(parent::dir_base() . '/components/social.php');
+
+        $html->set([
+            'title' => 'Meu Portfolio',
+            'menu' => $menu,
+            'social' => $social,
+            'home' => $this->pageHome(),
+            'skills' => $this->pageSkills(),
+            'projetos' => $this->pageProjetos(),
+            
+        ])
+
+        ->display();
+    }
+
+
+    public function pageHome() 
+    {
+       return parent::components(parent::dir_base() . '/home.php');
+    }
+
+    public function pageSkills() 
+    {   
+
+
+     $arrCardSkills = [
             [
                 'tecnologia' => 'HTML',
                 'descricao' => '6 anos entre estudo e prática na programação.',
@@ -43,32 +69,24 @@ class PortfolioController extends Controller
         
         $card_skills = "";
 
+        
+
         foreach ($arrCardSkills as $key => $value) {
             $card_skills .= parent::components(parent::dir_base() . '/components/card-skills.php', $value);
         }
 
-        $home = parent::components(parent::dir_base() . '/home.php');
-        $skills = parent::components(parent::dir_base() . '/skills.php', [
+        
+        
+        return parent::components(parent::dir_base() . '/skills.php', [
             'card_skills' => $card_skills
 
         ]);
 
-        $projetos = parent::components(parent::dir_base() . '/projetos.php');
-
-
-        $menu = parent::components(parent::dir_base() . '/components/menu.php');
-        $social = parent::components(parent::dir_base() . '/components/social.php');
-
-        $html->set([
-            'title' => 'Meu Portfolio',
-            'menu' => $menu,
-            'social' => $social,
-            'home' => $home,
-            'skills' => $skills,
-            'projetos' => $projetos,
-            
-        ])
-
-        ->display();
     }
+
+    public function pageProjetos() 
+    {
+        return parent::components(parent::dir_base() . '/projetos.php');
+    }
+    
 }
