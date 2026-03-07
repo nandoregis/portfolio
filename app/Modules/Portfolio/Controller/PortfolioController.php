@@ -85,8 +85,63 @@ class PortfolioController extends Controller
     }
 
     public function pageProjetos() 
-    {
-        return parent::components(parent::dir_base() . '/projetos.php');
+    {   
+
+        $arrProjetos = [
+            [
+                'img' => 'https://static.vecteezy.com/ti/fotos-gratis/t1/23056329-programador-pessoas-trabalhando-laptops-ou-smartphones-com-ai-artificial-inteligencia-programas-engenheiro-codificacao-em-computador-portatil-computadores-com-tecnologia-icones-e-binario-codigo-grande-dados-ai-robo-digital-maquina-foto.jpg',
+                'titulo' => 'Lorem Ipsum',
+                'descricao' => 'Sistema de modelo 3D, para camisas em que adiciona estampas em t-shirt.',
+                'tecnologias' => [
+                    'HTML',
+                    'CSS',
+                    'Javascript',
+                ],
+                'demo' => '#',
+                'github' => '#'
+            ],
+            [
+                'img' => 'https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg?fit=740%2C416&ssl=1',
+                'titulo' => 'Lorem Ipsum',
+                'descricao' => 'Sistema de modelo 3D, para camisas em que adiciona estampas em t-shirt.',
+                'tecnologias' => [
+                    'HTML',
+                    'CSS',
+                    'Javascript',
+                    'PHP',
+                    'Mysql'
+                ],
+                'demo' => '#',
+                'github' => '#'
+            ]
+        ];
+        
+        $cards = "";
+
+        function getTec($arrTecnologias) {
+                $tecnologias = "";
+
+                foreach ($arrTecnologias as $tecnologia) {
+                    $tecnologias .= '<div class="tecnologia-single"><small><b>' . $tecnologia . '</b></small></div>';
+                }
+
+                return $tecnologias;
+        }
+
+        foreach ($arrProjetos as $key => $value) {
+           $cards .= parent::components(parent::dir_base() . '/components/card-projeto.php', [
+                'img' => $value['img'],
+                'titulo' => $value['titulo'],
+                'descricao' => $value['descricao'],
+                'tecnologias' => getTec($value['tecnologias']),
+                'demo' => $value['demo'],
+                'github' => $value['github']
+           ]);
+        }
+
+        return parent::components(parent::dir_base() . '/projetos.php', [
+            'cards' => $cards
+        ]);
     }
     
 }
