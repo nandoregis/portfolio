@@ -10,40 +10,26 @@
 
     <script>
         const buttons = document.querySelectorAll('.menu nav a');
-        const scrollGump = 25;
-        var scrollTop = window.scrollY;
-        var contadorScroll = 0;
         
+        buttons.forEach(btn => {
 
-        buttons.forEach( i => {
-            i.addEventListener('click', (e) => {
+            btn.addEventListener('click', (e) => {
                 e.preventDefault();
-                
-                const id = i.getAttribute('href');
-                const offset = document.querySelector(id).offsetTop;
-                scrollTop = offset;
-                
-                const interval = setInterval(() => {
 
-                    if(scrollTop == 0) {
+                const id = btn.getAttribute('href');
+                const element = document.querySelector(id);
 
-                        contadorScroll = window.scrollY - scrollGump;
+                const offset = element.offsetTop;
 
-                    } else contadorScroll = contadorScroll + scrollGump; 
-                   
-                    window.scrollTo(0, contadorScroll);
+                window.scrollTo({
+                    top: offset,
+                    behavior: "smooth"
+                });
 
-                    if( ( scrollTop > 0 && contadorScroll >= scrollTop ) || contadorScroll < 0 ) 
-                    {
-                        contadorScroll = scrollTop;
-                        clearInterval(interval);
-                    }
-                    
-                    
-                }, 10);
-               
             });
+
         });
+        
 
 
     </script>
