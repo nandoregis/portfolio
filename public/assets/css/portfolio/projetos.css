@@ -1,0 +1,76 @@
+@import url(index.css);
+
+.projetos {
+    padding-top: 20px;
+}
+
+.my-projetos {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.my-projetos--gp {
+    margin-top: 30px;
+}
+
+.my-projetos--item {
+    width: 250px;
+    max-width: 250px;
+    min-height: 300px;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: left;
+    background-color: var(--bg-card);
+    cursor: pointer;
+}
+
+.my-projetos--item .item--img {
+    height: 50%;
+}
+
+.my-projetos--item .item--img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.my-projetos--gp-info {
+    padding: 20px 10px;
+}
+
+.item--tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.tecnologia-single {
+    background-color: var(--bg-detail);
+    padding: 4px 8px;
+    border-radius: 5px;
+}
+
+.my-projetos--item .item--info {
+    margin-top: 5px;
+}
+.my-projetos--item .item--info span {
+   font-size: 14px; 
+}
+
+.tecnologia-single small {
+    font-size: 12px;
+}
+
+.my-projetos--item .item--links {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+.my-projetos--item .item--links a {
+    font-size: 12px;
+    border: 1px solid var(--color-text);
+    padding: 4px 8px;
+    border-radius: 5px;
+}
