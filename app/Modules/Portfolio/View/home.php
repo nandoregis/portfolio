@@ -14,8 +14,8 @@
             </div>
     
             <div class="my--button">
-                <a href="#" class="ver-mais">Veja mais</a>
-                <a href="#" class="baixar-cv">Baixar CV</a>
+                <a href="#skills" id="ver-mais" class="ver-mais">Veja mais</a>
+                <a href="assets/cv/cv.pdf" download="CV-Luís-Fernando.pdf" class="baixar-cv">Baixar CV</a>
             </div>
     
             <p class="my--declariation">Construo interfaces e sistemas com atenção aos detalhes, foco em performance e prezo pela boa experiência do usuário.</p>
@@ -23,6 +23,23 @@
         </div><!--my-wraper-->
 
     </div>
+
+    <script>
+        const btnVermais = document.getElementById('ver-mais');
+
+        btnVermais.addEventListener('click', (e)=>{
+            e.preventDefault();
+            
+            let positionTop = btnVermais.getAttribute('href');
+            let scrollTop = document.querySelector(positionTop).offsetTop;
+
+            window.scrollTo({
+                top: scrollTop,
+                behavior: "smooth",
+            });
+
+        });
+    </script>
 
 </section>
 
