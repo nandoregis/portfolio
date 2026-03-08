@@ -9,23 +9,15 @@
     </nav>
 
     <script>
-        const buttons = document.querySelectorAll('.menu nav a');
-        
-        
 
+        const buttons = document.querySelectorAll('.menu nav a');
 
         const scrollSmooth = (target) => {
             
-            const startScroll = window.scrollY;
+            const startScroll = window.scrollY; 
             const distance = target - startScroll;
             const duration = 600;
             let startTime = null
-
-
-            console.log('target : ',target);
-            console.log('distance : ',distance);
-            console.log('startScroll : ',startScroll);
-
 
             function animation ( currentTime ) {
 
@@ -39,8 +31,6 @@
                 :  (progress - 1) * (2 * progress - 2) * (2 * progress - 2) + 1
 
                 window.scrollTo(0, startScroll + distance * ease);
-
-                console.log(startScroll + distance * ease)
 
                 if(elapsedTime < duration ) {
 

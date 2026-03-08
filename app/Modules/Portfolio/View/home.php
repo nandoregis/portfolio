@@ -10,7 +10,7 @@
             
             <div class="my--text">
                 <h1>Olá, eu sou <span>Luís</span></h1>
-                <h2>DESENVOLVEDOR <span>FULL STACK</span></h2>
+                <h2>DESENVOLVEDOR <span id="typing"></span></h2>
             </div>
     
             <div class="my--button">
@@ -40,9 +40,45 @@
 
         });
 
-        const textH1 = document.querySelector('.my--text h1');
+       
+        const effectAnimationText = () => {
 
-        console.log(textH1);
+         const typing = document.getElementById('typing');
+            const techs = [
+                'JAVASCRIPT',
+                'PHP',
+                'NODE.JS',
+                'FRONT-END',
+                'BACK-END',
+                'FULL STACK'
+            ];
+            
+            let indexArr = 0;
+            let indexText = 0;
+            let text = techs[indexArr];
+
+            const interval = setInterval(() => {
+
+                if(indexText < text.length) {
+
+                    typing.textContent += text.charAt(indexText);
+                    indexText++;
+
+                }else {
+                    indexText = 0
+                    indexArr++;
+                    if(indexArr > techs.length - 1) indexArr = 0;
+                    text = techs[indexArr];
+                    typing.textContent = "";
+                
+                }
+
+                
+            }, 500);
+
+        }
+
+        effectAnimationText();
 
     </script>
 
