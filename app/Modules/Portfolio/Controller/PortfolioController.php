@@ -28,6 +28,7 @@ class PortfolioController extends Controller
             'home' => $this->pageHome(),
             'skills' => $this->pageSkills(),
             'projetos' => $this->pageProjetos(),
+            'sobre' => $this->pageSobre()
             
         ])
 
@@ -42,7 +43,6 @@ class PortfolioController extends Controller
 
     public function pageSkills() 
     {   
-
 
      $arrCardSkills = [
             [
@@ -156,6 +156,11 @@ class PortfolioController extends Controller
         return parent::components(parent::dir_base() . '/projetos.php', [
             'cards' => $cards
         ]);
+    }
+
+    public function pageSobre() 
+    {
+        return parent::components(parent::dir_base() . '/sobre.php');
     }
     
 }

@@ -15,7 +15,8 @@
     color: var(--color-text);
     text-decoration: none;
     list-style: none;
-
+    scrollbar-color: var(--bg-detail) var(--bg-body);
+    scrollbar-width: thin;
 }
 
 body, html {

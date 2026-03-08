@@ -1,0 +1,69 @@
+@import url(index.css);
+
+.sobre {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sobre--wraper {
+    width: 70%;
+    display: flex;
+    align-items: center;
+}
+
+.my-sobre, .my-contato {
+    width: 50%;
+    padding: 60px;
+}
+
+.my-sobre h2, .my-contato h2 {
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.my-contato h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.my-contato h3 span {
+    color: var(--bg-button);
+}
+
+.my-sobre {
+    border-right: 1px solid #969696;
+}
+
+.my-contato--links ul {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-contato--links ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #a1a1a1;
+    color: #a1a1a1;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.my-contato--links ul li a i {
+    font-size: 22px;
+    font-weight: lighter;
+    color: inherit;
+}
+
+.my-contato--links ul li a:hover {
+    color: var(--color-text); 
+    border-color: var(--color-text);
+}
