@@ -2,7 +2,7 @@
 
     <div class="my">
 
-        <div class="my--wraper">
+        <div class="my--wraper tracking">
 
             <div class="my--picture-box effect-shadow">
                 <img src="assets/img/my.png" alt="">
@@ -39,8 +39,14 @@
             });
 
         });
+
+        const textH1 = document.querySelector('.my--text h1');
+
+        console.log(textH1);
+
     </script>
 
 </section>
+
 
 
