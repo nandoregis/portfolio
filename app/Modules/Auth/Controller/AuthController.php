@@ -85,7 +85,7 @@ class AuthController extends Controller
         unset($user['senha']); // remover informação sobre a senha
   
         Token::create($user);
-        Redirect::to('/dashboard');
+        Redirect::to('/admin');
         
         return true;
     }
