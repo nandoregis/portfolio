@@ -8,9 +8,7 @@
                     <path d="M2 27H33.25M33.25 27L23.875 17.625M33.25 27L23.875 36.375" stroke="#DEE4EC" stroke-width="3.75" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </div>
-    
-            <h2>Entrar, na Nellure Visual 3D</h2>
-            <p>Acesse agora e utilize a nossa ferramenta para que seus clientes deslumbre mais dos seus visuais.</p>
+
         </div>
     
         <form method="POST">
@@ -53,9 +51,7 @@
                     set_csrf();
                 ?>
                 
-                <p class="login__esqueceu-senha">
-                    <a target="__blank" href="https://wa.me/5581998213458?text=Ol%C3%A1%2C%20esqueci%20a%20senha%20de%20acesso!">Esqueceu a senha ?</a>
-                </p>
+            
             </div>
             
             <div class="input-btn-container flex">
@@ -63,10 +59,7 @@
                 <div class="input-box-btn">
                     <input type="submit" value="Entrar">
                 </div>
-    
-                <div class="input-box-btn">
-                    <a target="__blank" class="flex-center"  href="https://wa.me/5581998213458?text=Ol%C3%A1%2C%20quero%20criar%20uma%20conta!">Criar conta ?</a>
-                </div>
+                
             </div>
             
         </form>
