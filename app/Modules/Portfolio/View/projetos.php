@@ -10,3 +10,17 @@
         </div>
     </div>
 </div>
+
+<script>
+    const githubLink = document.querySelectorAll('#projeto-github-link a');
+    const demoLink = document.querySelectorAll('#projeto-demo-link a');
+
+    for (let i = 0; i < githubLink.length; i++) 
+    {
+        if(githubLink[i].getAttribute('href') == '#') githubLink[i].parentElement.remove();
+        if(demoLink[i].getAttribute('href') == '#') demoLink[i].parentElement.remove();
+    }
+
+
+</script>
+  

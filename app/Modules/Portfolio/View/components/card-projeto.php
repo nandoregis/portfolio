@@ -23,10 +23,11 @@
         </div>
 
         <div class="item--links">
-            <div class="github"><a href="{@github}">GITHUB</a></div>
-            <div class="demo"><a href="{@demo}">DEMO </a></div>
+            <div id="projeto-github-link" class="github"><a href="{@github}">GITHUB</a></div>
+            <div id="projeto-demo-link"  class="demo"><a href="{@demo}">DEMO </a></div>
         </div>
         
     </div><!--pg-info-->
 
 </div><!--item-single-->
+
