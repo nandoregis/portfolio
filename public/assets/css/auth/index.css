@@ -39,7 +39,7 @@
 
 .login__header h2 {
     font-weight: normal;
-    color: #f9f9f9;
+    color: #eeeeee;
     margin: 10px 0 10px;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .input-box {
-    background-color: #f9f9f9; 
+    background-color: #dfdfdf; 
     position: relative;
 }
 
@@ -73,13 +73,13 @@
 
 .input-box-btn input,
 .input-box-btn a  {
-    background-color: #f9f9f9;
+    background-color: #dfdfdf; 
 }
 
 .input-box-btn a {
     background: none;
-    color: #f9f9f9;
-    border: 1px solid #f9f9f9;
+    color: #dfdfdf; 
+    border: 1px solid #dfdfdf; 
 }
 
 .login__esqueceu-senha {text-align: right;}
