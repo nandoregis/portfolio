@@ -11,7 +11,7 @@ use app\Modules\Admin\Controller\AdminController;
             "controller" => new AdminController,
             "method" => "index",
             "http" => ["GET", "POST"],
-            "middlewares" => [],
+            "middlewares" => [new AuthMiddleware],
             "active" => true
         ],
         [   

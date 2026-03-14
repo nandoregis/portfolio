@@ -13,8 +13,8 @@
 
 <body>
 
-    {@sidebar}
-    {@projetos}
+  {@sidebar}
+  {@projetos}
 
 
 </body>

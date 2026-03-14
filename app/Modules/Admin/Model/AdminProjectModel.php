@@ -27,7 +27,7 @@ class AdminProjectModel extends Model
 
         $pdo = parent::mysql_conn();
         $stmt = $pdo->prepare($sql);
-        $stmt->bind_param(
+        $stmt->execute([
             UUID::generator(),
             $titulo,
             $descricao,
@@ -35,9 +35,7 @@ class AdminProjectModel extends Model
             $img_url,
             $github_url,
             $demo_url
-        );
-
-        $stmt->execute();
+        ]);
 
         return true;
     
