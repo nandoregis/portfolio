@@ -11,6 +11,11 @@
 }
 
 :root {
+    --bg-body : #1B1C2C;
+    --bg-button : #2B6F8D;
+    --bg-card : #181928;
+    --bg-detail : #121320;
+    --color-text: #f1f1f1;
     --bg-dark: #181928;
     --bg-gray: #acacac;
     --bg-gold: #FFD700;
