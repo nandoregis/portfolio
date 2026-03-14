@@ -33,6 +33,10 @@
       <div class="stat">
         <span class="stat__num" id="stat-public">0</span>
         <span class="stat__label">Publicados</span>
+      </div><div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat__num">#</span>
+        <span class="stat__label">Em processo</span>
       </div>
     </div>
 

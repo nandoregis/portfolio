@@ -36,7 +36,7 @@ class AdminApiController extends Controller
 
         try {
             $result = $this->adminProjectModel->createProject(...array_values($data));
-            return parent::apiView(201, ['message' => 'Projeto criado com sucesso', 'status' => true]);
+            return parent::apiView(201, ['message' => 'Projeto criado com sucesso', 'response' => $result, 'status' => true]);
         } catch (\Exception $e) {
             return parent::apiView(500, ['message' => 'Erro no servidor', 'status' => false]);
         }

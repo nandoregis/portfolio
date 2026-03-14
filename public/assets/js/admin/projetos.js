@@ -71,7 +71,7 @@ const createProjectComponentList = (title, tech, uuid = "") => {
 
     const li = document.createElement('li');
     li.setAttribute('data-uuid', uuid);
-    li.className = 'proj-row proj-row--enter';
+    li.className = 'proj-row proj-row--enter proj-row--visible';
     li.innerHTML = `
         <div class="proj-row__proj">
         <div class="proj-thumb" style="--thumb-a:${a};--thumb-b:${b}">${initials}</div>
@@ -94,6 +94,8 @@ const createProjectComponentList = (title, tech, uuid = "") => {
             </svg>
         </button>
         </div>`;
+
+        
     
     return li;
 }
@@ -160,17 +162,10 @@ $('btn-submit').addEventListener('click', () => {
 
     setTimeout( async () => {
    
-        $('proj-list').appendChild( createProjectComponentList(title, tech) );
-        requestAnimationFrame(() => li.classList.add('proj-row--visible'));
-
-        /* update count */
-        const total = $('stat-total');
-        total.textContent = parseInt(total.textContent) + 1;
+       
 
         /* clear */
-        fields.forEach(id => $(id).value = '');
         btn.classList.remove('btn-primary--loading');
-        closeModal();
 
         // enviar para API [ post ]
         const form = new FormData();
@@ -189,11 +184,27 @@ $('btn-submit').addEventListener('click', () => {
 
         const response = await post.json();
 
+        if ( response.status ) 
+        {
+            $('proj-list').appendChild( createProjectComponentList(title, tech, response.response.uuid) );
+
+            
+            /* update count */
+            const total = $('stat-total');
+            total.textContent = parseInt(total.textContent) + 1;
+
+            
+            closeModal();
+            fields.forEach(id => $(id).value = '');
+        }
+
+
         /* toast */
         const t = $('toast');
         t.classList.add('toast--show');
         t.textContent = response.message;
         setTimeout(() => t.classList.remove('toast--show'), 3200);
+       
 
     }, 800);
 

@@ -31,15 +31,18 @@ class AdminProjectModel extends Model
         string $github_url, 
         string $demo_url)
     {
-    
+
+        $uuid = UUID::generator();
+
         $sql = "INSERT INTO tb_projetos 
         (uuid, titulo, descricao, tecnologias, img_url, github_url, demo_url) 
         VALUES (?, ?, ?, ?, ?, ?, ?)";
+        
 
         $pdo = parent::mysql_conn();
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
-            UUID::generator(),
+            $uuid,
             $titulo,
             $descricao,
             $tecnologias,
@@ -48,7 +51,9 @@ class AdminProjectModel extends Model
             $demo_url
         ]);
 
-        return true;
+        return [
+            'uuid' => $uuid,
+        ];
     
     }
 
