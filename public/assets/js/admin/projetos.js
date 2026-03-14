@@ -113,7 +113,6 @@ const listItem = async () => {
 
     const total = $('stat-total');
     total.textContent = data.length;
-    $('stat-public').textContent = data.length;
 }
 
 listItem();
@@ -192,7 +191,6 @@ $('btn-submit').addEventListener('click', () => {
             /* update count */
             const total = $('stat-total');
             total.textContent = parseInt(total.textContent) + 1;
-
             
             closeModal();
             fields.forEach(id => $(id).value = '');
@@ -245,9 +243,7 @@ document.addEventListener('click', e => {
         const total = $('stat-total');
         const newCount = Math.max(0, parseInt(total.textContent) - 1);
         total.textContent = newCount;
-        $('stat-public').textContent = newCount;
     
-
     }, 320);
 });
 
