@@ -5,6 +5,7 @@ namespace app\Controller;
 use app\Service\Components;
 use app\Core\Navigation;
 use app\Core\Token;
+use app\View\ApiView;
 use app\View\View;
 use ArrayAccess;
 use DateTime;
@@ -162,5 +163,14 @@ class Controller
             'back_page' => $paginaAnterior,
             'next_page' => $proximaPagina
         ];
+    }
+
+    protected function apiView(Int $status, Array $data)
+    {
+        $print = new ApiView;
+        $print->setStatus($status)
+        ->setData($data)
+        ->send();
+
     }
 }
