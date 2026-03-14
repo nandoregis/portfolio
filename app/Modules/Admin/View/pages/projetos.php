@@ -26,18 +26,13 @@
     <!-- ── STATS ── -->
     <div class="stats-row">
       <div class="stat">
-        <span class="stat__num" id="stat-total">3</span>
+        <span class="stat__num" id="stat-total">0</span>
         <span class="stat__label">Total</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat">
-        <span class="stat__num">2</span>
+        <span class="stat__num" id="stat-public">0</span>
         <span class="stat__label">Publicados</span>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat">
-        <span class="stat__num">1</span>
-        <span class="stat__label">Em progresso</span>
       </div>
     </div>
 
@@ -64,49 +59,9 @@
       <!-- rows -->
       <ul class="proj-list" id="proj-list">
 
-        <li class="proj-row">
-          <div class="proj-row__proj">
-            <div class="proj-thumb" style="--thumb-a:#1a3a4a;--thumb-b:#2B6F8D">PF</div>
-            <div class="proj-row__info">
-              <p class="proj-row__name">Portfolio Pessoal</p>
-              <p class="proj-row__url">portfolio.vercel.app</p>
-            </div>
-          </div>
-          <div class="proj-row__tech">
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">Tailwind</span>
-          </div>
-          <div class="proj-row__status">
-            <span class="badge badge--live">Publicado</span>
-          </div>
-          <div class="proj-row__actions">
-            <button class="icon-btn" title="Editar">
-              <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-                <path d="M9.5 1.5L11.5 3.5L4.5 10.5H2.5V8.5L9.5 1.5Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
-              </svg>
-            </button>
-            <button class="icon-btn icon-btn--danger" title="Excluir">
-              <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-                <path d="M2 3.5H11M4.5 3.5V2H8.5V3.5M5 6V9.5M8 6V9.5M2.5 3.5L3.3 11H9.7L10.5 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-          </div>
-        </li>
-
       </ul>
 
-      <!-- empty state (hidden by default) -->
-      <div class="proj-empty" id="proj-empty" hidden>
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect x="4" y="6" width="24" height="20" rx="2.5" stroke="currentColor" stroke-width="1.4"/>
-          <path d="M10 12H22M10 17H18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-        </svg>
-        <p>Nenhum projeto cadastrado</p>
-        <button class="btn-primary" onclick="document.getElementById('btn-open-modal').click()">
-          Adicionar primeiro projeto
-        </button>
-      </div>
-
+    
     </section>
 
   </main>

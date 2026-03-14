@@ -83,12 +83,12 @@ const createProjectComponentList = (title, tech, uuid = "") => {
         <div class="proj-row__tech">${tags}</div>
         <div class="proj-row__status"><span class="badge badge--live">Publicado</span></div>
         <div class="proj-row__actions">
-        <button class="icon-btn" title="Editar">
+        <button class="icon-btn btn-edit" title="Editar">
             <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
             <path d="M9.5 1.5L11.5 3.5L4.5 10.5H2.5V8.5L9.5 1.5Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
             </svg>
         </button>
-        <button class="icon-btn icon-btn--danger" title="Excluir">
+        <button class="icon-btn icon-btn--danger btn-delete" title="Excluir">
             <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
             <path d="M2 3.5H11M4.5 3.5V2H8.5V3.5M5 6V9.5M8 6V9.5M2.5 3.5L3.3 11H9.7L10.5 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -108,6 +108,10 @@ const listItem = async () => {
         $('proj-list').appendChild(li);
         li.classList.add('proj-row--visible');
     });
+
+    const total = $('stat-total');
+    total.textContent = data.length;
+    $('stat-public').textContent = data.length;
 }
 
 listItem();
@@ -203,11 +207,44 @@ document.addEventListener('click', e => {
     const row = del.closest('.proj-row');
     if (!row) return;
     row.classList.add('proj-row--exit');
+
     setTimeout(() => {
-    row.remove();
-    const total = $('stat-total');
-    const newCount = Math.max(0, parseInt(total.textContent) - 1);
-    total.textContent = newCount;
-    if (!$('proj-list').children.length) $('proj-empty').hidden = false;
+        row.remove();
+        const total = $('stat-total');
+        const newCount = Math.max(0, parseInt(total.textContent) - 1);
+        total.textContent = newCount;
+        if (!$('proj-list').children.length) $('proj-empty').hidden = false;
+
     }, 320);
+});
+
+const deleteRows = document.querySelectorAll('.btn-delete');
+
+deleteRows.forEach( btn => {
+
+    btn.addEventListener('click', () => {
+        const row = del.closest('.proj-row');
+        if (!row) return;
+        row.classList.add('proj-row--exit');
+
+         setTimeout( async () => {
+
+            const response = await fetch(`${baseUrl}/admin/v1/api/projetos/d/delete/${row.dataset.uuid}`);
+            const data = await response.json();
+                
+            /* toast */
+            const t = $('toast');
+            t.classList.add('toast--show');
+            t.textContent = response.message;
+            setTimeout(() => t.classList.remove('toast--show'), 3200);
+
+            row.remove();
+            const total = $('stat-total');
+            const newCount = Math.max(0, parseInt(total.textContent) - 1);
+            total.textContent = newCount;
+            if (!$('proj-list').children.length) $('proj-empty').hidden = false;
+    
+        }, 320);
+        
+    })
 });
