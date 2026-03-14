@@ -36,7 +36,7 @@ class AdminApiController extends Controller
 
         try {
             $result = $this->adminProjectModel->createProject(...array_values($data));
-            return parent::apiView(201, ['message' => 'Sucesso', 'status' => true]);
+            return parent::apiView(201, ['message' => 'Projeto criado com sucesso', 'status' => true]);
         } catch (\Exception $e) {
             return parent::apiView(500, ['message' => 'Erro no servidor', 'status' => false]);
         }
@@ -55,7 +55,7 @@ class AdminApiController extends Controller
       
         try {
             $result = $this->adminProjectModel->updateProject($uuid, $data);
-            return parent::apiView(201, ['message' => 'Sucesso', 'status' => true]);
+            return parent::apiView(201, ['message' => 'Projeto atualizado com sucesso', 'status' => true]);
         } catch (\Exception $e) {
             return parent::apiView(500, ['message' => 'Erro no servidor', 'status' => false]);
         }
@@ -66,9 +66,13 @@ class AdminApiController extends Controller
     {
         $uuid = $req->input('uuid');
 
+        if(empty($uuid)){
+            return parent::apiView(400, ['message' => 'Valor UUID do projeto não informado', 'status' => false]);
+        }
+
         try {
             $result = $this->adminProjectModel->deleteProject($uuid);
-            return parent::apiView(201, ['message' => 'Sucesso', 'status' => true]);
+            return parent::apiView(201, ['message' => 'Projeto deletado', 'status' => true]);
         } catch (\Exception $e) {
             return parent::apiView(500, ['message' => 'Erro no servidor', 'status' => false]);
         }

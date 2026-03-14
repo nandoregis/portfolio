@@ -41,7 +41,7 @@ use app\Modules\Admin\Controller\AdminController;
         [   
             "route" => "/v1/api/projetos/d/delete",
             "controller" => new AdminApiController,
-            "method" => "updateProject",
+            "method" => "deleteProject",
             "http" => ["POST"],
             "middlewares" => [new AuthMiddleware],
             "active" => true
