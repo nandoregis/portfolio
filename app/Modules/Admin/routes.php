@@ -30,6 +30,22 @@ use app\Modules\Admin\Controller\AdminController;
             "middlewares" => [new AuthMiddleware],
             "active" => true
         ],
+        [   
+            "route" => "/v1/api/projetos/u/update",
+            "controller" => new AdminApiController,
+            "method" => "updateProject",
+            "http" => ["POST"],
+            "middlewares" => [new AuthMiddleware],
+            "active" => true
+        ],
+        [   
+            "route" => "/v1/api/projetos/d/delete",
+            "controller" => new AdminApiController,
+            "method" => "updateProject",
+            "http" => ["POST"],
+            "middlewares" => [new AuthMiddleware],
+            "active" => true
+        ],
         
         
     ];

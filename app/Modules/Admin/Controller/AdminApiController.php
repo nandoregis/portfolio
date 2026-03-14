@@ -80,6 +80,19 @@ class AdminApiController extends Controller
 
     }
 
+    public function deleteProject(Object $req)
+    {
+        $uuid = $req->input('uuid');
+
+        try {
+            $result = $this->adminProjectModel->deleteProject($uuid);
+            return parent::apiView(201, ['message' => 'Sucesso', 'status' => true]);
+        } catch (\Exception $e) {
+            return parent::apiView(500, ['message' => 'Erro no servidor', 'status' => false]);
+        }
+
+    }
+
     private function getProjectData(Object $req): array 
     {
         return [
