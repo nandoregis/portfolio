@@ -10,10 +10,7 @@ class AuthModel extends Model
 {
     private static $connection;
     private static $tables = [
-        'usuario' => 'tb_usuarios',
-        'acesso' => 'tb_niveis_acesso',
-        'assinaturas' => 'tb_assinaturas',
-        'planos' => 'tb_planos'
+        'usuario' => 'tb_admin',
     ];
 
     public function __construct() 

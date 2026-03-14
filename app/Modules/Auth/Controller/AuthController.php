@@ -76,11 +76,6 @@ class AuthController extends Controller
         $user = $this->user->getter()->get($user); 
 
         if(!$user || !password_verify($password, $user['senha'])) return throw new Exception(json_encode(['status' => 'error', 'message' => 'Usuario ou senha incorretos!']));
-       
-        // Verificar se conta está ativa
-        if(!$user['estatus']) {
-            return ['status' => 'error', 'message' => "Sua conta está desativada", 'code' => 403];
-        }
 
         unset($user['senha']); // remover informação sobre a senha
   
