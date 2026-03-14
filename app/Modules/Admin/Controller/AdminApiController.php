@@ -17,31 +17,13 @@ class AdminApiController extends Controller
 
     public function getAllProject(Object $req)
     {   
-        $response = [
-            [
-                "uuid" => 'aaaa',
-                'titulo' => 'aaaaaaaaa',
-                'descricao' => 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
-                'tecnologias' => 'a,b,c,d,f,g',
-                'img_url' => 'http://localhost',
-                'github_url' => 'http://localhost',
-                'demo_url' => '#'
-            ],
-            [
-                "uuid" => 'bbbbbbb',
-                'titulo' => 'aaaabbbbbbbbbbbaaaaa',
-                'descricao' => 'bbbbbbbbbbbbbbbdsadasdasdsadasdasdasdbbbbbbbbbbbbbbbbbbbbbb',
-                'tecnologias' => 'a,b,c,d,f,g',
-                'img_url' => 'http://localhost',
-                'github_url' => 'http://localhost',
-                'demo_url' => '#'
-            ]
-        ];
-
+        try {
+            $response = $this->adminProjectModel->getAllProject();
+        } catch (\Throwable $th) {
+            return parent::apiView(500, ['message' => 'Erro no servidor', 'status' => false]);
+        }
         return parent::apiView(200, $response);
     }
-
-
 
     public function createProject(Object $req)
     {

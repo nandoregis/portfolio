@@ -12,6 +12,17 @@ class AdminProjectModel extends Model
         parent::__construct();
     }
 
+    public function getAllProject() 
+    {
+        $sql = "SELECT * FROM tb_projetos";
+        $pdo = parent::mysql_conn();
+
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
     public function createProject(
         string $titulo, 
         string $descricao, 
